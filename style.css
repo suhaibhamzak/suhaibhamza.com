@@ -145,3 +145,94 @@ footer {
 }
 
 footer a { color: var(--accent-color); text-decoration: none; }
+
+/* --- CV SPECIFIC STYLES --- */
+.cv-header {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 30px;
+    margin-bottom: 40px;
+    border-bottom: 2px solid var(--accent-color);
+    padding-bottom: 30px;
+}
+
+.cv-header-info h1 {
+    margin-bottom: 5px;
+    font-size: 2.5rem;
+}
+
+.cv-header-info h2 {
+    font-size: 1.2rem;
+    color: var(--primary-color);
+    font-weight: 400;
+    margin-top: 0;
+}
+
+.cv-contact-row a {
+    margin-right: 20px;
+    color: #666;
+    text-decoration: none;
+    font-size: 0.9rem;
+}
+
+.cv-section {
+    margin-bottom: 50px;
+}
+
+.cv-section-title {
+    font-size: 1.5rem;
+    border-left: 5px solid var(--primary-color);
+    padding-left: 15px;
+    margin-bottom: 25px;
+    color: var(--primary-color);
+    font-family: 'Playfair Display', serif;
+}
+
+/* Timeline Item for Jobs/Education */
+.cv-item {
+    margin-bottom: 30px;
+    padding-left: 20px;
+    border-left: 2px solid #eee;
+    transition: var(--transition);
+}
+
+.cv-item:hover {
+    border-left: 2px solid var(--primary-color);
+}
+
+.cv-item h3 {
+    margin: 0;
+    font-size: 1.2rem;
+    color: #333;
+}
+
+.cv-item .org {
+    font-weight: bold;
+    color: var(--primary-color);
+}
+
+.cv-item .date {
+    font-size: 0.85rem;
+    color: #888;
+    margin-bottom: 10px;
+    display: block;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+/* Skills Tags */
+.skill-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.tag {
+    background: var(--light-grey);
+    padding: 5px 12px;
+    border-radius: 20px;
+    font-size: 0.9rem;
+    color: #555;
+    border: 1px solid #ddd;
+}
