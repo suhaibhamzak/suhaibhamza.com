@@ -3,10 +3,10 @@
 
 /* GLOBAL VARIABLES */
 :root {
-    --primary-color: #7D5A50;   /* Deep Earthy Brown */
-    --accent-color: #D9C4A8;    /* Sand */
-    --bg-color: #FDFBF7;        /* Off-white/Cream */
-    --text-color: #333333;      /* Soft Black */
+    --primary-color: #7D5A50;   
+    --accent-color: #D9C4A8;    
+    --bg-color: #FDFBF7;        
+    --text-color: #333333;      
     --light-grey: #f4f4f4;
     --transition: all 0.3s ease;
 }
@@ -35,10 +35,11 @@ nav {
 
 .logo {
     font-family: 'Playfair Display', serif;
-    font-size: 1.5rem;
+    font-size: 1.2rem; /* Reduced slightly for long name */
     color: var(--primary-color);
     font-weight: bold;
     text-decoration: none;
+    letter-spacing: 0.5px;
 }
 
 .nav-links a {
@@ -55,26 +56,26 @@ nav {
     color: var(--primary-color);
 }
 
-/* HERO SECTION (Side-by-Side Layout) */
+/* HERO SECTION */
 .hero {
     background-color: var(--primary-color);
     color: #fff;
-    padding: 80px 0; /* Vertical padding */
+    padding: 80px 0;
 }
 
 .hero-content {
-    display: flex;           /* This enables side-by-side */
-    align-items: center;     /* Vertically centers items */
+    display: flex;
+    align-items: center;
     justify-content: space-between;
-    gap: 50px;               /* Space between text and image */
+    gap: 50px;
     max-width: 1100px;
     margin: 0 auto;
     padding: 0 20px;
 }
 
 .hero-text {
-    flex: 1;                 /* Takes up available space */
-    text-align: left;        /* Aligns text to the left */
+    flex: 1;
+    text-align: left;
 }
 
 .hero-text h1 {
@@ -110,17 +111,17 @@ nav {
 
 /* PROFILE PHOTO STYLES */
 .hero-image-container {
-    flex: 1;                 /* Takes up equal space */
+    flex: 1;
     display: flex;
-    justify-content: center; /* Centers image in its box */
+    justify-content: center;
 }
 
 .profile-img {
-    width: 280px;            /* Larger size for impact */
+    width: 280px;
     height: 280px;
     object-fit: cover;
     border-radius: 50%;
-    border: 8px solid rgba(255,255,255,0.15); /* Semi-transparent border */
+    border: 8px solid rgba(255,255,255,0.15);
     box-shadow: 0 10px 30px rgba(0,0,0,0.3);
     transition: var(--transition);
 }
@@ -145,6 +146,23 @@ h2 {
     text-align: center;
 }
 
+/* CV & OTHER SPECIFIC STYLES (KEEPING THESE FOR YOUR CV PAGE) */
+.cv-header { display: flex; flex-wrap: wrap; align-items: center; gap: 30px; margin-bottom: 40px; border-bottom: 2px solid var(--accent-color); padding-bottom: 30px; }
+.cv-header-info h1 { margin-bottom: 5px; font-size: 2.2rem; color: var(--primary-color); }
+.cv-header-info h2 { font-size: 1.1rem; color: #666; font-weight: 400; margin-top: 0; }
+.cv-contact-row { margin-top: 15px; }
+.cv-contact-row a, .cv-contact-row span { margin-right: 20px; color: #444; text-decoration: none; font-size: 0.9rem; display: inline-block; }
+.cv-contact-row i { color: var(--primary-color); margin-right: 5px; }
+.cv-section { margin-bottom: 50px; }
+.cv-section-title { font-size: 1.4rem; border-left: 5px solid var(--primary-color); padding-left: 15px; margin-bottom: 25px; color: var(--primary-color); font-family: 'Playfair Display', serif; font-weight: bold; }
+.cv-item { margin-bottom: 30px; padding-left: 20px; border-left: 2px solid #eee; transition: var(--transition); }
+.cv-item:hover { border-left: 2px solid var(--primary-color); }
+.cv-item h3 { margin: 0; font-size: 1.2rem; color: #333; }
+.cv-item .org { font-weight: bold; color: var(--primary-color); }
+.cv-item .date { font-size: 0.85rem; color: #888; margin-bottom: 10px; display: block; text-transform: uppercase; letter-spacing: 1px; margin-top: 5px; }
+.skill-tags { display: flex; flex-wrap: wrap; gap: 10px; }
+.tag { background: #f4f4f4; padding: 6px 14px; border-radius: 20px; font-size: 0.85rem; color: #555; border: 1px solid #ddd; display: inline-block; }
+
 /* FOOTER */
 footer {
     background-color: #2c2c2c;
@@ -154,41 +172,22 @@ footer {
     margin-top: 50px;
 }
 
-/* MOBILE RESPONSIVE (Stacking order) */
+/* PROJECT GRID */
+.project-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; }
+.project-card { background: #fff; border: 1px solid #eee; border-radius: 8px; padding: 25px; transition: var(--transition); box-shadow: 0 5px 15px rgba(0,0,0,0.05); }
+.project-card:hover { transform: translateY(-5px); box-shadow: 0 15px 30px rgba(0,0,0,0.1); border-bottom: 3px solid var(--primary-color); }
+.project-card h3 { margin-top: 0; color: var(--primary-color); }
+
+/* MOBILE RESPONSIVE */
 @media (max-width: 900px) {
     .hero-content {
-        flex-direction: column-reverse; /* Puts image ON TOP of text on mobile */
+        flex-direction: column-reverse;
         text-align: center;
         padding: 40px 20px;
     }
-
-    .hero-text {
-        text-align: center;
-    }
-
-    .hero-text h1 {
-        font-size: 2.5rem;
-    }
-
-    .profile-img {
-        width: 180px;
-        height: 180px;
-        margin-bottom: 30px;
-    }
-    
-    nav {
-        flex-direction: column;
-        gap: 15px;
-    }
-    
-    .nav-links {
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: center;
-        gap: 10px;
-    }
-    
-    .nav-links a {
-        margin: 0 5px;
-    }
+    .hero-text { text-align: center; }
+    .hero-text h1 { font-size: 2.5rem; }
+    .profile-img { width: 180px; height: 180px; margin-bottom: 30px; }
+    nav { flex-direction: column; gap: 15px; }
+    .nav-links { display: flex; flex-wrap: wrap; justify-content: center; gap: 10px; }
 }
