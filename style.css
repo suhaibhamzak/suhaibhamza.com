@@ -191,3 +191,64 @@ footer {
     nav { flex-direction: column; gap: 15px; }
     .nav-links { display: flex; flex-wrap: wrap; justify-content: center; gap: 10px; }
 }
+/* --- NEW PREMIUM ADDITIONS --- */
+
+/* 1. Smooth Fade-In Animation (Like the example site) */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* Apply animation to main sections */
+.hero, .container, .features-section {
+    animation: fadeIn 1.2s ease-out forwards;
+}
+
+/* 2. The "Pillars" Section (Focus Areas) */
+.features-section {
+    background-color: #fff; /* White background for contrast */
+    padding: 80px 20px;
+    text-align: center;
+    border-bottom: 1px solid #eee;
+}
+
+.features-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); /* Auto-stacking columns */
+    gap: 40px;
+    max-width: 1100px;
+    margin: 50px auto 0;
+}
+
+.feature-box {
+    padding: 35px 25px;
+    background: #fff;
+    border: 1px solid #f0f0f0;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+}
+
+.feature-box:hover {
+    box-shadow: 0 15px 40px rgba(0,0,0,0.08); /* Soft shadow on hover */
+    transform: translateY(-5px);
+    border-color: var(--accent-color);
+}
+
+.feature-icon {
+    font-size: 2.5rem;
+    color: var(--primary-color);
+    margin-bottom: 20px;
+    display: block;
+}
+
+.feature-box h3 {
+    font-family: 'Playfair Display', serif;
+    margin-bottom: 15px;
+    color: #333;
+}
+
+.feature-box p {
+    font-size: 0.95rem;
+    color: #666;
+    line-height: 1.6;
+}
